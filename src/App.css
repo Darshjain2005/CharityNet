@@ -373,22 +373,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px; /* Force height */
-  width: 40px;  /* Force width */
   z-index: 20;
 }
 
-.avatar-circle {
-  width: 44px;
-  height: 44px;
-  background-color: #000; /* Solid black to stand out */
-  border: 3px solid white;
+/* Updated styling for the icon itself */
+.avatar-icon-nav {
+  color: #000; /* Black icon lines */
+  background-color: #fff; /* White background circle */
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 2px;
+  border: 2px solid #000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.avatar-circle:hover {
-  transform: scale(1.15) rotate(5deg);
-  background-color: #111;
+.avatar-icon-nav:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }

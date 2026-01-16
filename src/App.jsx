@@ -7,6 +7,7 @@ import AuthPage from './components/AuthPage';
 import Profile from './components/Profile';
 import Contribute from './components/contribute';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { UserCircle } from 'lucide-react';
 
 function MainApp() {
   const [user, setUser] = useState(null);
@@ -52,21 +53,20 @@ function MainApp() {
           <img src="/logo.png" alt="CharityNet" className="pixel-blend-logo" />
         </div>
         <div className="auth-links">
-          <span className="nav-item">Contact Us</span>
-          
-          {/* Use the loading state to prevent flickering */}
-          {!loading && (
-            user ? (
-              <div className="profile-icon-nav" onClick={() => navigate('/profile')}>
-                 <div className="avatar-circle"></div>
-              </div>
-            ) : (
-              <span className="login-text login-btn-animate" onClick={() => navigate('/auth')}>
-                Login
-              </span>
-            )
-          )}
-        </div>
+  <span className="nav-item">Contact Us</span>
+  {!loading && (
+    user ? (
+      <div className="profile-icon-nav" onClick={() => navigate('/profile')}>
+         {/* FIX: Replace black div with actual Icon */}
+         <UserCircle className="avatar-icon-nav" size={44} />
+      </div>
+    ) : (
+      <span className="login-text login-btn-animate" onClick={() => navigate('/auth')}>
+        Login
+      </span>
+    )
+  )}
+</div>
       </nav>
 
       <main className="main-content">

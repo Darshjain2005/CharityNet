@@ -1,186 +1,124 @@
 .contribute-page {
-  min-height: 100vh;
-  width: 100%;
-  background: radial-gradient(circle, #00ced1 0%, #008b8b 50%, #004d4d 100%);
-  color: white;
-  font-family: 'Segoe UI', Roboto, sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background-color: #00d3e0; /* Match Landing Page Cyan */
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-/* Header kept as per your original code */
 .contribute-header {
   display: flex;
   justify-content: space-between;
+  padding: 20px 60px;
   align-items: center;
-  padding: 20px 40px;
+  z-index: 10;
 }
 
-.logo-section {
+.brand-logo {
+  width: 180px;
+  mix-blend-mode: multiply;
+}
+
+/* Back Button Styles */
+.back-nav-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
-}
-
-.brand-name {
-  font-size: 20px;
-  font-weight: bold;
-  font-style: italic;
-  color: #e0f2f1;
-}
-
-.user-nav-icon {
-  width: 40px;
-  height: 40px;
   cursor: pointer;
+  color: black;
+  transition: transform 0.2s;
+}
+
+.back-nav-container:hover {
+  transform: scale(1.1);
+}
+
+.back-text {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .selection-container {
-  flex: 1;
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  z-index: 5;
 }
 
-/* --- CHANGED SECTION: THE CARD --- */
 .cards-wrapper {
-  background-color: rgba(0, 131, 143, 0.45); /* More translucent like image */
-  backdrop-filter: blur(15px);
-  width: 95%;
-  max-width: 1300px; /* Increased width significantly */
   display: flex;
-  padding: 80px 20px; /* Taller card */
-  border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
-  position: relative;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .selection-card {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 320px;
   text-align: center;
-  padding: 0 50px;
+  padding: 20px;
 }
 
 .card-title {
-  font-size: 3.2rem; /* Much larger title */
-  margin-bottom: 40px;
-  font-weight: 500;
-  color: #ffffff;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 800;
 }
 
 .circle-image-container {
-  width: 220px; /* Larger circles */
-  height: 220px;
-  background-color: #ffffff;
+  width: 150px;
+  height: 150px;
+  background: white;
   border-radius: 50%;
+  margin: 0 auto 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  justify-content: center;
+  overflow: hidden;
+  border: 4px solid black;
 }
 
 .card-illustration {
-  width: 65%;
-  height: 65%;
-  object-fit: contain;
-}
-
-.card-description {
-  font-size: 16px; /* Slightly larger text */
-  line-height: 1.6;
-  color: #e0f7fa;
-  margin-bottom: 50px;
-  max-width: 420px; /* Text spreads out more */
+  width: 80%;
 }
 
 .action-button {
-  background-color: #000;
+  background-color: black;
   color: white;
+  padding: 12px 35px;
+  border-radius: 25px;
   border: none;
-  padding: 16px 100px; /* Much wider buttons */
-  border-radius: 50px;
-  font-size: 24px;
-  font-weight: 600;
+  font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  margin-top: 15px;
+  transition: background 0.3s;
 }
 
 .action-button:hover {
-  transform: scale(1.05);
-  background-color: #111;
+  background-color: #333;
 }
 
 .vertical-line {
-  width: 1px;
-  background-color: rgba(255, 255, 255, 0.3);
-  align-self: stretch;
+  width: 2px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 40px;
 }
 
-/* Mobile Responsive */
-@media (max-width: 900px) {
-  .cards-wrapper {
-    flex-direction: column;
-    padding: 40px 20px;
-    width: 100%;
-  }
-  
-  .vertical-line {
-    width: 100%;
-    height: 1px;
-    margin: 40px 0;
-  }
-
-  .card-title {
-    font-size: 2rem;
-  }
-
-  .action-button {
-    padding: 12px 60px;
-  }
+/* Scenery Fix */
+.scenery {
+  position: absolute;
+  bottom: 0; width: 100%; height: 250px; pointer-events: none;
 }
-/* Add to the top of Contribute.css to prevent artifacts */
-* {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent; /* Fixes mobile black box */
-}
-
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Prevents sliding horizontal bars */
-}
-
-.contribute-page {
-  position: relative;
-  min-height: 100vh;
-  width: 100vw;
-  background: radial-gradient(circle, #00ced1 0%, #008b8b 50%, #004d4d 100%);
-  display: flex;
-  flex-direction: column;
-}
-
-/* Fix the button "black box" focus issue */
-.action-button {
-  outline: none; /* Removes the default focus ring */
-  text-decoration: none;
-  border: none;
-  /* ... existing styles ... */
-}
-
-.action-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3); /* Softer highlight */
-}
-
-/* Ensure the Link component doesn't add weird styles */
-a {
-  text-decoration: none;
-}
+.pole { position: absolute; width: 14px; height: 200px; background: #111; bottom: 0; }
+.p-left { left: 22%; }
+.p-right { right: 22%; }
+.sagging-wires { position: absolute; bottom: 110px; width: 100%; height: 140px; }
+.wire-path { fill: none; stroke: #000; stroke-width: 1.2; }
