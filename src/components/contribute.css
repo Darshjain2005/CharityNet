@@ -1,0 +1,186 @@
+.contribute-page {
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle, #00ced1 0%, #008b8b 50%, #004d4d 100%);
+  color: white;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header kept as per your original code */
+.contribute-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  color: #e0f2f1;
+}
+
+.user-nav-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.selection-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* --- CHANGED SECTION: THE CARD --- */
+.cards-wrapper {
+  background-color: rgba(0, 131, 143, 0.45); /* More translucent like image */
+  backdrop-filter: blur(15px);
+  width: 95%;
+  max-width: 1300px; /* Increased width significantly */
+  display: flex;
+  padding: 80px 20px; /* Taller card */
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.selection-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 50px;
+}
+
+.card-title {
+  font-size: 3.2rem; /* Much larger title */
+  margin-bottom: 40px;
+  font-weight: 500;
+  color: #ffffff;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.circle-image-container {
+  width: 220px; /* Larger circles */
+  height: 220px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.card-illustration {
+  width: 65%;
+  height: 65%;
+  object-fit: contain;
+}
+
+.card-description {
+  font-size: 16px; /* Slightly larger text */
+  line-height: 1.6;
+  color: #e0f7fa;
+  margin-bottom: 50px;
+  max-width: 420px; /* Text spreads out more */
+}
+
+.action-button {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 16px 100px; /* Much wider buttons */
+  border-radius: 50px;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.action-button:hover {
+  transform: scale(1.05);
+  background-color: #111;
+}
+
+.vertical-line {
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  align-self: stretch;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .cards-wrapper {
+    flex-direction: column;
+    padding: 40px 20px;
+    width: 100%;
+  }
+  
+  .vertical-line {
+    width: 100%;
+    height: 1px;
+    margin: 40px 0;
+  }
+
+  .card-title {
+    font-size: 2rem;
+  }
+
+  .action-button {
+    padding: 12px 60px;
+  }
+}
+/* Add to the top of Contribute.css to prevent artifacts */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /* Fixes mobile black box */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents sliding horizontal bars */
+}
+
+.contribute-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle, #00ced1 0%, #008b8b 50%, #004d4d 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fix the button "black box" focus issue */
+.action-button {
+  outline: none; /* Removes the default focus ring */
+  text-decoration: none;
+  border: none;
+  /* ... existing styles ... */
+}
+
+.action-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3); /* Softer highlight */
+}
+
+/* Ensure the Link component doesn't add weird styles */
+a {
+  text-decoration: none;
+}
