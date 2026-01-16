@@ -6,8 +6,11 @@ import './App.css';
 import AuthPage from './components/AuthPage';
 import Profile from './components/Profile';
 import Contribute from './components/contribute';
+import DonationItems from './components/DonationItems'; // Middle selection page
+import DonationDetails from './components/DonationDetails'; 
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { UserCircle } from 'lucide-react';
+import 'leaflet/dist/leaflet.css';
 
 function MainApp() {
   const [user, setUser] = useState(null);
@@ -15,7 +18,6 @@ function MainApp() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Standard Firebase Auth Observer
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false); 
@@ -53,20 +55,19 @@ function MainApp() {
           <img src="/logo.png" alt="CharityNet" className="pixel-blend-logo" />
         </div>
         <div className="auth-links">
-  <span className="nav-item">Contact Us</span>
-  {!loading && (
-    user ? (
-      <div className="profile-icon-nav" onClick={() => navigate('/profile')}>
-         {/* FIX: Replace black div with actual Icon */}
-         <UserCircle className="avatar-icon-nav" size={44} />
-      </div>
-    ) : (
-      <span className="login-text login-btn-animate" onClick={() => navigate('/auth')}>
-        Login
-      </span>
-    )
-  )}
-</div>
+          <span className="nav-item">Contact Us</span>
+          {!loading && (
+            user ? (
+              <div className="profile-icon-nav" onClick={() => navigate('/profile')}>
+                <UserCircle className="avatar-icon-nav" size={44} />
+              </div>
+            ) : (
+              <span className="login-text login-btn-animate" onClick={() => navigate('/auth')}>
+                Login
+              </span>
+            )
+          )}
+        </div>
       </nav>
 
       <main className="main-content">
@@ -101,6 +102,14 @@ export default function App() {
           element={<Profile onBack={() => window.location.href = '/'} />} 
         />
         <Route path="/contribute" element={<Contribute />} />
+        
+        {/* Middle Item Selection Routes */}
+        <Route path="/select-essentials" element={<DonationItems type="Community Essentials" />} />
+        <Route path="/select-food" element={<DonationItems type="Food For All" />} />
+
+        {/* Final Map Routes */}
+        <Route path="/donate-essentials" element={<DonationDetails type="Essentials" />} />
+        <Route path="/donate-food" element={<DonationDetails type="Food" />} />
       </Routes>
     </Router>
   );

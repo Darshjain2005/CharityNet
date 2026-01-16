@@ -1,0 +1,133 @@
+.details-page-wrapper {
+  min-height: 100vh; /* Changed from height to min-height */
+  width: 100vw;
+  background-color: #00d3e0;
+  position: relative;
+  overflow-y: auto; /* Changed from hidden to auto */
+  display: flex;
+  flex-direction: column;
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 10;
+}
+
+.brand-logo {
+  width: 160px;
+  mix-blend-mode: multiply;
+}
+
+.header-title-box h2 {
+  color: white;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.back-home-icon {
+  color: black;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.back-home-icon:hover {
+  transform: scale(1.1);
+}
+
+.details-main-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  padding: 10px 50px 150px 50px; /* Large bottom padding to clear scenery */
+  gap: 30px;
+  z-index: 5;
+}
+
+.ngo-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 70vh; /* Limits the list height */
+  overflow-y: auto; /* Enables scrolling just for the cards */
+  padding-right: 10px; /* Space for the scrollbar */
+}
+
+.ngo-suggestion-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.rank-tag {
+  background: black;
+  color: white;
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.map-view-box {
+  border-radius: 25px;
+  overflow: hidden;
+  border: 4px solid white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.leaflet-map-instance {
+  height: 100%;
+  width: 100%;
+}
+
+.confirm-btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  background: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Scenery Logic */
+.scenery {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 250px;
+  pointer-events: none; /* Allows clicking through wires to map if needed */
+}
+
+.pole {
+  position: absolute;
+  width: 14px;
+  height: 200px;
+  background: #111;
+  bottom: 0;
+}
+
+.p-left { left: 22%; }
+.p-right { right: 22%; }
+
+.sagging-wires {
+  position: absolute;
+  bottom: 110px;
+  width: 100%;
+  height: 140px;
+}
+
+.wire-path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1.2;
+}
+

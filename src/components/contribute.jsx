@@ -12,7 +12,6 @@ const Contribute = () => {
         <div className="logo-section">
           <img src="/logo.png" alt="CharityNet" className="brand-logo" />
         </div>
-        {/* Replaced Profile Icon with Home Back Button */}
         <div className="back-nav-container" onClick={() => navigate('/')}>
           <Home className="back-home-icon" size={32} />
           <span className="back-text">Back</span>
@@ -32,7 +31,8 @@ const Contribute = () => {
               Donate groceries, clothes, books, and daily essentials. 
               These items have a long shelf life and support families in need.
             </p>
-            <Link to="/donate-essentials">
+            {/* UPDATED: Points to the Item Selection Page */}
+            <Link to="/select-essentials">
               <button className="action-button">Contribute</button>
             </Link>
           </section>
@@ -49,14 +49,14 @@ const Contribute = () => {
               Help rescue safe, untouched leftover food. 
               Crucial for immediate hunger relief as these items expire quickly.
             </p>
-            <Link to="/donate-food">
+            {/* UPDATED: Points to the Item Selection Page */}
+            <Link to="/select-food">
               <button className="action-button">Support</button>
             </Link>
           </section>
         </div>
       </main>
 
-      {/* Reusable Scenery Logic */}
       <div className="scenery">
         <div className="pole p-left"></div>
         <div className="pole p-right"></div>
