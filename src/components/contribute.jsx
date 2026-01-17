@@ -1,7 +1,7 @@
 import React from 'react';
 import { Home } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Contribute.css';
+import './contribute.css';
 
 const Contribute = () => {
   const navigate = useNavigate();
